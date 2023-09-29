@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1695636254 source:/home/rm306044/Documents/SAE/jdp/main.c
+	<stdio.h>
+	<stdlib.h>
+	<ncurses.h>
+
+1695636644 source:c:\users\rm306044\onedrive - université côte d'azur\documents\s1.01 - implémentation besoin client\sae\jdp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ncurses.h>
+
