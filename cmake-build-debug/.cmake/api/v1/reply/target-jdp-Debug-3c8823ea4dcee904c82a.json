@@ -29,19 +29,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 19,
+				"line" : 20,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/usr/lib/x86_64-linux-gnu/include"
+					"path" : "/wsl.localhost/Ubuntu-22.04/usr/lib/x86_64-linux-gnu/include"
 				}
 			],
 			"language" : "C",
@@ -84,7 +84,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "\\wsl.localhost\\Ubuntu-22.04\\usr\\lib\\x86_64-linux-gnu\\libncurses.co",
+				"fragment" : "\"\\\\wsl.localhost\\Ubuntu-22.04\\usr\\lib\\x86_64-linux-gnu\\libncurses.so\"",
 				"role" : "libraries"
 			},
 			{
