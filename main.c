@@ -7,7 +7,7 @@ int main(void) {
     WINDOW *titleBox, *chronoBox, *resultBox;
 
     initscr();
-    resize_term(100, 80);
+    resize_term(100, 40);
 
     while(1){
         titleBox= subwin(stdscr, LINES / 4, COLS/1.5, 0, 0);
