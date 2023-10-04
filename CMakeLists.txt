@@ -20,6 +20,8 @@ find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
 add_executable(jdp
-        main.c)
+        main.c
+        menu.c
+        menu.h)
 
 target_link_libraries(jdp ${CURSES_LIBRARIES})
