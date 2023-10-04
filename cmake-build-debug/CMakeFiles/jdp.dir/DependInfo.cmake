@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "F:/users/maths/Documents/GitHub/jdp/main.c" "CMakeFiles/jdp.dir/main.c.obj" "gcc" "CMakeFiles/jdp.dir/main.c.obj.d"
+  "/home/maths/jdp/main.c" "CMakeFiles/jdp.dir/main.c.o" "gcc" "CMakeFiles/jdp.dir/main.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

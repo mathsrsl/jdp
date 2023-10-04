@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "jdp.exe"
-		},
-		{
-			"path" : "jdp.pdb"
+			"path" : "jdp"
 		}
 	],
 	"backtrace" : 1,
@@ -84,18 +81,19 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "\"\\\\wsl.localhost\\Ubuntu-22.04\\usr\\lib\\x86_64-linux-gnu\\libncurses.so\"",
+				"fragment" : "-l\\\\wsl.localhost\\Ubuntu-22.04\\usr\\lib\\x86_64-linux-gnu/libncurses.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libform.so",
 				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "jdp",
-	"nameOnDisk" : "jdp.exe",
+	"nameOnDisk" : "jdp",
 	"paths" : 
 	{
 		"build" : ".",
