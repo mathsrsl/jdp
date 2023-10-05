@@ -10,29 +10,62 @@ void menu()
     WINDOW *mainContainer;
 
     initscr();
-    resize_term(30, 100);
+    int height = 30;
+    int width = 100;
+    resize_term(height, width);
 
     while(1){
+        clear();
+
+        char saisie[20];
+
         //déclare taille et position des boites
-        mainContainer = subwin(stdscr, LINES, COLS, 0, 0);
+        mainContainer = subwin(stdscr, height, width, 0, 0);
+
 
         //création des boites
         box(mainContainer, 0, 0);
 
-        //affichage du text
-        clear();
-        mvwprintw(mainContainer, 1, 1, "wqt");
 
-        //affichage du cadre
-        wborder(mainContainer, '|', '|', '-', '-', '+', '+', '+', '+');
+        //affichage d'un cadre blanc autour de mainContainer
+        chtype ulcorner = ACS_ULCORNER;
+        chtype urcorner = ACS_URCORNER;
+        chtype llcorner = ACS_LLCORNER;
+        chtype lrcorner = ACS_LRCORNER;
+        chtype hline = ACS_HLINE;
+        chtype vline = ACS_VLINE;
+
+        mvwaddch(mainContainer, 0, 0, ulcorner);
+        mvwaddch(mainContainer, 0, width - 1, urcorner);
+        mvwaddch(mainContainer, height - 1, 0, llcorner);
+        mvwaddch(mainContainer, height - 1, width - 1, lrcorner);
+        mvwhline(mainContainer, 0, 1, hline, width - 2);
+        mvwhline(mainContainer, height - 1, 1, hline, width - 2);
+        mvwvline(mainContainer, 1, 0, vline, height - 2);
+        mvwvline(mainContainer, 1, width - 1, vline, height - 2);
+
+
+        //affichage du text
+        mvwprintw(mainContainer, LINES/3, 5, "MENU");
+        mvwprintw(mainContainer, LINES/3+3, 5, "1. Un joueur");
+        mvwprintw(mainContainer, LINES/3+5, 5, "2. Autoplayer");
+        mvwprintw(mainContainer, LINES/3+8, 5, "Entrez votre choix :");
+
+        mvwgetstr(mainContainer, LINES/3+10, 5, saisie);
+
+        if(saisie[0]=='1'){
+            mvwprintw(mainContainer, LINES/3+12, 5, "WQT");
+        }
+
 
         //refresh
         refresh();
         wrefresh(mainContainer);
 
-
-        if(getch() != 410)
+        
+        if(getch() != 410){
             break;
+        }
     }
 
     endwin();
