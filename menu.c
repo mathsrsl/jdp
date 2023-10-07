@@ -5,7 +5,7 @@
 
 #include "menu.h"
 
-void menu()
+int menu()
 {
     WINDOW *mainContainer;
 
@@ -13,11 +13,11 @@ void menu()
     int height = 30;
     int width = 100;
     resize_term(height, width);
+    char saisie[20];
 
-    while(1){
+    do{
         clear();
-
-        char saisie[20];
+        wclear(mainContainer);
 
         //déclare taille et position des boites
         mainContainer = subwin(stdscr, height, width, 0, 0);
@@ -53,20 +53,26 @@ void menu()
 
         mvwgetstr(mainContainer, LINES/3+10, 5, saisie);
 
-        if(saisie[0]=='1'){
-            mvwprintw(mainContainer, LINES/3+12, 5, "WQT");
-        }
+        switch (saisie[0]) {
+            case '1':
+                return 1;
+            case '2':
+                return 2;
+            case 'q':
+            case 'Q':
+                endwin();
+                return 0;
 
+            default:
+                mvwprintw(mainContainer, LINES/3+12, 5, "Erreur de saisie");
+        }
 
         //refresh
         refresh();
         wrefresh(mainContainer);
 
-        
-        if(getch() != 410){
-            break;
-        }
-    }
+
+    } while (saisie[0] != '1' && saisie[0] != '2');
 
     endwin();
 }

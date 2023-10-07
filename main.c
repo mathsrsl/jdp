@@ -7,9 +7,12 @@
 
 int main(void) {
 
-    menu();
+    int menuChoice = menu();
 
-    /*
+    if(menuChoice == 0){
+        return 0;
+    }
+
     WINDOW *titleBox, *chronoBox, *resultBox;
 
     initscr();
@@ -47,16 +50,16 @@ int main(void) {
         wrefresh(resultBox);
 
 
-        if(getch() != 410)
-            break;
+        if(getch() == 'q' || getch() == 'Q') {
+            endwin();
+            return 0;
+        }
     }
 
     endwin();
 
     //free(titleBox);
     //free(resultBox);
-
-    */
 
     return 0;
 }
