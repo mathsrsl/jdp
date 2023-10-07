@@ -7,16 +7,29 @@
 
 int main(void) {
 
-    int menuChoice = menu();
+    initscr();
+
+    int height = 30;
+    int width = 100;
+    int rows, cols;
+
+    getmaxyx(stdscr, rows, cols); // Obtenez la taille du terminal dans rows et cols
+    if(rows < height || cols < 100){
+        endwin();
+        printf("Terminal trop petit, veuillez l'agrandir\n");
+        return 0;
+    }
+
+    int menuChoice = menu(height, width);
 
     if(menuChoice == 0){
+        endwin();
         return 0;
     }
 
     WINDOW *titleBox, *chronoBox, *resultBox;
 
-    initscr();
-    resize_term(30, 100);
+    //resize_term(30, 100);
 
     while(1){
         //titleBox= subwin(stdscr, LINES / 4, COLS/1.5, 0, 0);
