@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/jdp.dir/main.c.o -o jdp  -l\\wsl.localhost\Ubuntu-22.04\usr\lib\x86_64-linux-gnu/libncurses.so /usr/lib/x86_64-linux-gnu/libform.so 
