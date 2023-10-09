@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include <ncurses.h>
 
@@ -14,7 +15,7 @@ int main(void) {
     int rows, cols;
 
     getmaxyx(stdscr, rows, cols); // Obtenez la taille du terminal dans rows et cols
-    if(rows < height || cols < 100){
+    if(rows < height || cols < width){
         endwin();
         printf("Terminal trop petit, veuillez l'agrandir\n");
         return 0;
@@ -24,55 +25,58 @@ int main(void) {
 
     if(menuChoice == 0){
         endwin();
+        printf("Au revoir\n");
         return 0;
     }
 
+    clear();
+    cbreak();
+    noecho();
     WINDOW *titleBox, *chronoBox, *resultBox;
 
-    //resize_term(30, 100);
+    //time_t start = time (NULL);
+    clock_t temps;
+    srand(time(NULL));
+
+    //déclare taille et position des boites
+    titleBox = subwin(stdscr, 4, width/1.5, 0, 0);
+    chronoBox = subwin(stdscr, 4, width/3+1, 0, width/1.5);
+    resultBox = subwin(stdscr, 7, width, 23, 0);
+
+    //création des boites
+    box(titleBox, ACS_VLINE, ACS_HLINE);
+    box(chronoBox, ACS_VLINE, ACS_HLINE);
+    box(resultBox, ACS_VLINE, ACS_HLINE);
+
+    //affichage du text
+    mvwprintw(titleBox, 1, 1, "Jeu des paires\nTrouver les paires en un minimum de temps");
+    mvwprintw(resultBox, 1, 1, "Meilleur chrono : \n");
+
+    //affichage du cadre
+    wborder(titleBox, '|', '|', '-', '-', '+', '+', '+', '+');
+    wborder(resultBox, '|', '|', '-', '-', '+', '+', '+', '+');
+
 
     while(1){
-        //titleBox= subwin(stdscr, LINES / 4, COLS/1.5, 0, 0);
-        //chronoBox= subwin(stdscr, LINES / 4, COLS/3, 0, COLS-(COLS/3));
-        //resultBox= subwin(stdscr, LINES / 4, COLS, LINES-(LINES/4), 0);
+        char key = getch();
 
-        //déclare taille et position des boites
-        titleBox = subwin(stdscr, 6, 66, 0, 0);
-        chronoBox = subwin(stdscr, 6, 32, 0, 67);
-        resultBox = subwin(stdscr, 7, 100, 23, 0);
-
-        //création des boites
-        box(titleBox, ACS_VLINE, ACS_HLINE);
-        box(chronoBox, ACS_VLINE, ACS_HLINE);
-        box(resultBox, ACS_VLINE, ACS_HLINE);
-
-        //affichage du text
-        clear();
-        mvwprintw(titleBox, 1, 1, "Jeu des paires\nTrouver les paires en un minimum de temps");
-        mvwprintw(chronoBox, 1, 1, "chrono");
-        mvwprintw(resultBox, 1, 1, "Ceci est la fenetre du bas");
-
-        //affichage du cadre
-        wborder(titleBox, '|', '|', '-', '-', '+', '+', '+', '+');
+        temps=clock();
+        mvwprintw(chronoBox, 1, 1, "chrono : %f\nblbl : %c", (double)temps/CLOCKS_PER_SEC, key);
         wborder(chronoBox, '|', '|', '-', '-', '+', '+', '+', '+');
-        wborder(resultBox, '|', '|', '-', '-', '+', '+', '+', '+');
 
         //refresh
-        wrefresh(titleBox);
         wrefresh(chronoBox);
-        wrefresh(resultBox);
+        //wrefresh(titleBox);
+        //wrefresh(resultBox);
 
 
-        if(getch() == 'q' || getch() == 'Q') {
+        if(key == 'q' || key == 'Q') {
             endwin();
             return 0;
         }
     }
 
     endwin();
-
-    //free(titleBox);
-    //free(resultBox);
 
     return 0;
 }

@@ -90,8 +90,12 @@ int menu(int height, int width)
 
         switch (choice[0]) {
             case '1':
+                clear();
+                wclear(mainContainer);
+                endwin();
                 return 1;
             case '2':
+                endwin();
                 return 2;
             case 'q':
             case 'Q':
@@ -107,8 +111,8 @@ int menu(int height, int width)
         refresh();
         wrefresh(mainContainer);
 
-
     } while (choice[0] != '1' && choice[0] != '2');
 
     endwin();
+    return 0;
 }
