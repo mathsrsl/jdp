@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h> //pour usleep
 
 #include <ncurses.h>
 
@@ -13,30 +14,42 @@ int main(void) {
     int height = 30;
     int width = 100;
     int rows, cols;
+    int menuChoice;
 
-    getmaxyx(stdscr, rows, cols); // Obtenez la taille du terminal dans rows et cols
+    //Erreur terminal trop petit
+    getmaxyx(stdscr, rows, cols); //taille du terminal
     if(rows < height || cols < width){
         endwin();
-        printf("Terminal trop petit, veuillez l'agrandir\n");
-        return 0;
+        printf("Erreur, terminal trop petit\n");
+        return -1;
     }
 
-    int menuChoice = menu(height, width);
+    //Afficher le menu du jeu
+    menuChoice = menu(height, width);
 
-    if(menuChoice == 0){
+    if(menuChoice == -1){ //Si touche q pressee
         endwin();
         printf("Au revoir\n");
         return 0;
     }
 
+    /* ------------------ Affichage du jeu ------------------ */
+
     clear();
-    cbreak();
-    noecho();
+    cbreak(); //evite de d'attendre une nouvelle ligne pour getch()
+    noecho(); //desactive l'echo automatique des caracteres entréees
+    nodelay(stdscr, TRUE); //eviter que getch() bloque la boucle 
+    keypad(stdscr, TRUE); // pour les touches spécials (flèches)
+
     WINDOW *titleBox, *chronoBox, *resultBox;
 
-    //time_t start = time (NULL);
-    clock_t temps;
-    srand(time(NULL));
+    int key;
+    struct timespec start_time, current_time;
+    double elapsed_time;
+
+    //obtenir le temps au début de l'exec
+    clock_gettime(CLOCK_REALTIME, &start_time);
+
 
     //déclare taille et position des boites
     titleBox = subwin(stdscr, 4, width/1.5, 0, 0);
@@ -58,22 +71,28 @@ int main(void) {
 
 
     while(1){
-        char key = getch();
-
-        temps=clock();
-        mvwprintw(chronoBox, 1, 1, "chrono : %f\nblbl : %c", (double)temps/CLOCKS_PER_SEC, key);
-        wborder(chronoBox, '|', '|', '-', '-', '+', '+', '+', '+');
-
-        //refresh
-        wrefresh(chronoBox);
-        //wrefresh(titleBox);
-        //wrefresh(resultBox);
-
-
+        key = getch();
         if(key == 'q' || key == 'Q') {
             endwin();
             return 0;
         }
+
+        
+        clock_gettime(CLOCK_REALTIME, &current_time); // obtenir temps actuel
+
+        // calculer le temps ecoule (en sec + nanoseconde)
+        elapsed_time = (double)(current_time.tv_sec - start_time.tv_sec) +
+                       (double)(current_time.tv_nsec - start_time.tv_nsec) / 1.0e9;
+
+        mvwprintw(chronoBox, 1, 1, "chrono : %.1fs\n Key : %c", elapsed_time, key);
+        wborder(chronoBox, '|', '|', '-', '-', '+', '+', '+', '+');
+
+        //refresh
+        wrefresh(chronoBox);
+        //wrefresh(resultBox);
+
+
+        usleep(100000);
     }
 
     endwin();

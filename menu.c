@@ -100,7 +100,7 @@ int menu(int height, int width)
             case 'q':
             case 'Q':
                 endwin();
-                return 0;
+                return -1;
 
             default:
                 inputError = true;
