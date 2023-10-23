@@ -129,6 +129,30 @@ jdp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/build
 .PHONY : jdp/fast
 
+carte.o: carte.c.o
+.PHONY : carte.o
+
+# target to build an object file
+carte.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.o
+.PHONY : carte.c.o
+
+carte.i: carte.c.i
+.PHONY : carte.i
+
+# target to preprocess a source file
+carte.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.i
+.PHONY : carte.c.i
+
+carte.s: carte.c.s
+.PHONY : carte.s
+
+# target to generate assembly for a file
+carte.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.s
+.PHONY : carte.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -153,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/main.c.s
 .PHONY : main.c.s
 
+menu.o: menu.c.o
+.PHONY : menu.o
+
+# target to build an object file
+menu.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.o
+.PHONY : menu.c.o
+
+menu.i: menu.c.i
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.i
+.PHONY : menu.c.i
+
+menu.s: menu.c.s
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.s
+.PHONY : menu.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... jdp"
+	@echo "... carte.o"
+	@echo "... carte.i"
+	@echo "... carte.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
 .PHONY : help
 
 

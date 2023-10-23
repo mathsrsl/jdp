@@ -6,7 +6,9 @@ set(CMAKE_C_STANDARD 11)
 add_executable(jdp
         main.c
         menu.c
-        menu.h)
+        menu.h
+        carte.c
+        carte.h)
 
 
 

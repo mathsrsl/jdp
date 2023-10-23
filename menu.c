@@ -19,6 +19,7 @@ int menu(int height, int width)
 
     start_color();
     init_pair(1, COLOR_WHITE, COLOR_RED);
+    init_pair(2, COLOR_BLUE, COLOR_BLACK);
 
 
     //déclare taille et position des boites
@@ -62,7 +63,9 @@ int menu(int height, int width)
         };
 
         for (int i = 0; i < 7; i++) {
-            mvwprintw(mainContainer, 3+i, 10, "%s", banner_text[i]);
+            wattron(mainContainer, A_BOLD | COLOR_PAIR(2));
+            mvwprintw(mainContainer, 3+i, 2, "%s", banner_text[i]);
+            wattroff(mainContainer, A_BOLD | COLOR_PAIR(2));
         }
 
         wattron(mainContainer, A_BOLD);
