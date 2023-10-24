@@ -79,7 +79,7 @@
 		<Unit filename="/home/maths/jdp/carte.c">
 			<Option target="jdp"/>
 		</Unit>
-		<Unit filename="/home/maths/jdp/cmake-build-debug/carte.h">
+		<Unit filename="/home/maths/jdp/carte.h">
 			<Option target="jdp"/>
 		</Unit>
 		<Unit filename="/home/maths/jdp/main.c">

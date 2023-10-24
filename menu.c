@@ -18,8 +18,14 @@ int menu(int height, int width)
     bool inputError = false;
 
     start_color();
-    init_pair(1, COLOR_WHITE, COLOR_RED);
-    init_pair(2, COLOR_BLUE, COLOR_BLACK);
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(3, COLOR_GREEN, COLOR_BLACK);
+    init_pair(4, COLOR_BLUE, COLOR_BLACK);
+    init_pair(5, COLOR_MAGENTA, COLOR_BLACK);
+
+
+    init_pair(8, COLOR_WHITE, COLOR_RED);
 
 
     //déclare taille et position des boites
@@ -63,9 +69,14 @@ int menu(int height, int width)
         };
 
         for (int i = 0; i < 7; i++) {
-            wattron(mainContainer, A_BOLD | COLOR_PAIR(2));
-            mvwprintw(mainContainer, 3+i, 2, "%s", banner_text[i]);
-            wattroff(mainContainer, A_BOLD | COLOR_PAIR(2));
+            if(i == 0 || i == 6){
+                mvwprintw(mainContainer, 3+i, 2, "%s", banner_text[i]);
+            } else {
+                wattron(mainContainer, A_BOLD | COLOR_PAIR(i));
+                mvwprintw(mainContainer, 3+i, 2, "%s", banner_text[i]);
+                wattroff(mainContainer, A_BOLD | COLOR_PAIR(i));
+            }
+
         }
 
         wattron(mainContainer, A_BOLD);
@@ -83,9 +94,9 @@ int menu(int height, int width)
             int y = height / 2;
             int x = (width - strlen(errorText)) / 2;
 
-            wattron(mainContainer, A_BOLD | A_UNDERLINE | COLOR_PAIR(1));
+            wattron(mainContainer, A_BOLD | A_UNDERLINE | COLOR_PAIR(8));
             mvwprintw(mainContainer, y, x, "%s", errorText);
-            wattroff(mainContainer, A_BOLD | A_UNDERLINE | COLOR_PAIR(1));
+            wattroff(mainContainer, A_BOLD | A_UNDERLINE | COLOR_PAIR(8));
 
         }
 

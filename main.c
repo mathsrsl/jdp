@@ -15,6 +15,7 @@ int main(void) {
     int height = 30;
     int width = 80; //100
     int rows, cols;
+
     int menuChoice;
 
     //Erreur terminal trop petit
@@ -45,6 +46,8 @@ int main(void) {
     WINDOW *titleBox, *chronoBox, *resultBox;
 
     int key;
+    int cursorPos = 1;
+
     struct timespec start_time, current_time;
     double elapsed_time;
 
@@ -81,9 +84,15 @@ int main(void) {
         // calculer le temps ecoule (en sec + nanoseconde)
         elapsed_time = (double)(current_time.tv_sec - start_time.tv_sec) +
                        (double)(current_time.tv_nsec - start_time.tv_nsec) / 1.0e9;
-
+        // affichage du temps
         mvwprintw(chronoBox, 1, 1, "chrono : %.1fs", elapsed_time);
-        mvwprintw(chronoBox, 2, 1, "KEY DETECT : %c", key);
+        mvwprintw(chronoBox, 2, 1, "KEY DETECT : %d", cursorPos);
+
+        if (key == 'a') {
+            cursorPos = (cursorPos>1) ? cursorPos-1 : 12;
+        } else if (key == 'z') {
+            cursorPos = (cursorPos<12) ? cursorPos+1 : 1;
+        }
 
         //refresh
         wrefresh(chronoBox);
