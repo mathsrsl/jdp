@@ -9,7 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/maths/jdp/carte.c" "CMakeFiles/jdp.dir/carte.c.o" "gcc" "CMakeFiles/jdp.dir/carte.c.o.d"
+  "/home/maths/jdp/carte2.c" "CMakeFiles/jdp.dir/carte2.c.o" "gcc" "CMakeFiles/jdp.dir/carte2.c.o.d"
   "/home/maths/jdp/main.c" "CMakeFiles/jdp.dir/main.c.o" "gcc" "CMakeFiles/jdp.dir/main.c.o.d"
+  "/home/maths/jdp/main2.c" "CMakeFiles/jdp.dir/main2.c.o" "gcc" "CMakeFiles/jdp.dir/main2.c.o.d"
   "/home/maths/jdp/menu.c" "CMakeFiles/jdp.dir/menu.c.o" "gcc" "CMakeFiles/jdp.dir/menu.c.o.d"
   )
 

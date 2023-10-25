@@ -81,12 +81,12 @@ clean: CMakeFiles/jdp.dir/clean
 CMakeFiles/jdp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/maths/jdp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target jdp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/maths/jdp/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target jdp"
 .PHONY : CMakeFiles/jdp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/jdp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maths/jdp/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maths/jdp/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/jdp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/maths/jdp/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/jdp.dir/rule

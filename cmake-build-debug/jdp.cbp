@@ -82,7 +82,16 @@
 		<Unit filename="/home/maths/jdp/carte.h">
 			<Option target="jdp"/>
 		</Unit>
+		<Unit filename="/home/maths/jdp/carte2.c">
+			<Option target="jdp"/>
+		</Unit>
+		<Unit filename="/home/maths/jdp/carte2.h">
+			<Option target="jdp"/>
+		</Unit>
 		<Unit filename="/home/maths/jdp/main.c">
+			<Option target="jdp"/>
+		</Unit>
+		<Unit filename="/home/maths/jdp/main2.c">
 			<Option target="jdp"/>
 		</Unit>
 		<Unit filename="/home/maths/jdp/menu.c">

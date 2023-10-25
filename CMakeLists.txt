@@ -8,7 +8,10 @@ add_executable(jdp
         menu.c
         menu.h
         carte.c
-        carte.h)
+        carte.h
+        main2.c
+        carte2.h
+        carte2.c)
 
 
 
