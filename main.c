@@ -86,13 +86,13 @@ int main(void) {
                        (double)(current_time.tv_nsec - start_time.tv_nsec) / 1.0e9;
         // affichage du temps
         mvwprintw(chronoBox, 1, 1, "chrono : %.1fs", elapsed_time);
-        mvwprintw(chronoBox, 2, 1, "KEY DETECT : %d", cursorPos);
+        mvwprintw(chronoBox, 2, 1, "KEY DETECT : %d", key);
 
-        if (key == 'a') {
-            cursorPos = (cursorPos>1) ? cursorPos-1 : 12;
-        } else if (key == 'z') {
-            cursorPos = (cursorPos<12) ? cursorPos+1 : 1;
-        }
+        //if (key == 'a') {
+        //    cursorPos = (cursorPos>1) ? cursorPos-1 : 12;
+        //} else if (key == 'z') {
+        //    cursorPos = (cursorPos<12) ? cursorPos+1 : 1;
+        //}
 
         //refresh
         wrefresh(chronoBox);
