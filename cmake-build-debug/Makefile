@@ -129,6 +129,54 @@ jdp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/build
 .PHONY : jdp/fast
 
+carte.o: carte.c.o
+.PHONY : carte.o
+
+# target to build an object file
+carte.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.o
+.PHONY : carte.c.o
+
+carte.i: carte.c.i
+.PHONY : carte.i
+
+# target to preprocess a source file
+carte.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.i
+.PHONY : carte.c.i
+
+carte.s: carte.c.s
+.PHONY : carte.s
+
+# target to generate assembly for a file
+carte.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte.c.s
+.PHONY : carte.c.s
+
+carte2.o: carte2.c.o
+.PHONY : carte2.o
+
+# target to build an object file
+carte2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte2.c.o
+.PHONY : carte2.c.o
+
+carte2.i: carte2.c.i
+.PHONY : carte2.i
+
+# target to preprocess a source file
+carte2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte2.c.i
+.PHONY : carte2.c.i
+
+carte2.s: carte2.c.s
+.PHONY : carte2.s
+
+# target to generate assembly for a file
+carte2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/carte2.c.s
+.PHONY : carte2.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -153,6 +201,54 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/main.c.s
 .PHONY : main.c.s
 
+main2.o: main2.c.o
+.PHONY : main2.o
+
+# target to build an object file
+main2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/main2.c.o
+.PHONY : main2.c.o
+
+main2.i: main2.c.i
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/main2.c.i
+.PHONY : main2.c.i
+
+main2.s: main2.c.s
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/main2.c.s
+.PHONY : main2.c.s
+
+menu.o: menu.c.o
+.PHONY : menu.o
+
+# target to build an object file
+menu.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.o
+.PHONY : menu.c.o
+
+menu.i: menu.c.i
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.i
+.PHONY : menu.c.i
+
+menu.s: menu.c.s
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/jdp.dir/build.make CMakeFiles/jdp.dir/menu.c.s
+.PHONY : menu.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... jdp"
+	@echo "... carte.o"
+	@echo "... carte.i"
+	@echo "... carte.s"
+	@echo "... carte2.o"
+	@echo "... carte2.i"
+	@echo "... carte2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
 .PHONY : help
 
 
