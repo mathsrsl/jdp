@@ -1,8 +1,10 @@
-# Introduction
-This is the a quick starter project made and used by Benjamin Code to quickly experiment stuffs when he's trying to replicate cool effects he sees on the web.
-
 
 # Installation
+
+```agsl
+npm install npm -g
+```
+
 ``` 
 npm install
 npm run start
@@ -31,19 +33,3 @@ You must install codesandbox command line on your computer. Then add this alias 
 ```
 alias share_code='rm -rf dist .cache && codesandbox ./'
 ```
-
-# Benjamin Code
-
-It's also the project he uses for his Twitch livestreams.
-
-A real project was made with this quick starter:
-
-https://benjamincode.tv
-
-To support Benjamin Code, you can follow him on:
-
-YouTube: https://www.youtube.com/channel/UCLOAPb7ATQUs_nDs9ViLcMw
-
-Twitter: https://twitter.com/benjamincodeYT
-
-Twitch: https://www.twitch.tv/benjamincode
