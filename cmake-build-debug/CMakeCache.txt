@@ -39,7 +39,7 @@ CMAKE_CODEBLOCKS_MAKE_ARGUMENTS:STRING=
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe
+CMAKE_C_COMPILER:STRING=C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/gcc.exe
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=

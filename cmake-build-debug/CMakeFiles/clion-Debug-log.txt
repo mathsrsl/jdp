@@ -13,17 +13,17 @@ CMake Error at C:/Users/maths/AppData/Local/Programs/CLion/bin/cmake/win/x64/sha
 
   It fails with the following output:
 
-    Change Dir: //wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jv82w9
+    Change Dir: //wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n397jl
     
-    Run Build Command(s):C:/Users/maths/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_debaa/fast && C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\cmTC_debaa.dir\build.make CMakeFiles/cmTC_debaa.dir/build
-    mingw32-make[1]: Entering directory '//wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jv82w9'
-    Building C object CMakeFiles/cmTC_debaa.dir/testCCompiler.c.obj
-    C:\Users\maths\AppData\Local\Programs\CLion\bin\mingw\bin\gcc.exe    -o CMakeFiles\cmTC_debaa.dir\testCCompiler.c.obj -c "\\wsl$\Debian\home\maths\jdp\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-jv82w9\testCCompiler.c"
+    Run Build Command(s):C:/Users/maths/AppData/Local/Programs/CLion/bin/cmake/win/x64/bin/cmake.exe -E env VERBOSE=1 C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_fda2b/fast && C:/Users/maths/AppData/Local/Programs/CLion/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\cmTC_fda2b.dir\build.make CMakeFiles/cmTC_fda2b.dir/build
+    mingw32-make[1]: Entering directory '//wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n397jl'
+    Building C object CMakeFiles/cmTC_fda2b.dir/testCCompiler.c.obj
+    C:\Users\maths\AppData\Local\Programs\CLion\bin\mingw\bin\gcc.exe    -o CMakeFiles\cmTC_fda2b.dir\testCCompiler.c.obj -c "\\wsl$\Debian\home\maths\jdp\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-n397jl\testCCompiler.c"
     Assembler messages:
-    Fatal error: can't create CMakeFiles\cmTC_debaa.dir\testCCompiler.c.obj: Invalid argument
-    mingw32-make[1]: *** [CMakeFiles\cmTC_debaa.dir\build.make:77: CMakeFiles/cmTC_debaa.dir/testCCompiler.c.obj] Error 1
-    mingw32-make[1]: Leaving directory '//wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jv82w9'
-    mingw32-make: *** [Makefile:126: cmTC_debaa/fast] Error 2
+    Fatal error: can't create CMakeFiles\cmTC_fda2b.dir\testCCompiler.c.obj: Invalid argument
+    mingw32-make[1]: *** [CMakeFiles\cmTC_fda2b.dir\build.make:77: CMakeFiles/cmTC_fda2b.dir/testCCompiler.c.obj] Error 1
+    mingw32-make[1]: Leaving directory '//wsl$/Debian/home/maths/jdp/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n397jl'
+    mingw32-make: *** [Makefile:126: cmTC_fda2b/fast] Error 2
     
     
 
